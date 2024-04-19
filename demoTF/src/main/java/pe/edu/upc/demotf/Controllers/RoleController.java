@@ -1,53 +1,55 @@
 package pe.edu.upc.demotf.Controllers;
 
 import jakarta.persistence.*;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.demotf.Dtos.RoleDTO;
+import pe.edu.upc.demotf.Entities.Role;
 import pe.edu.upc.demotf.Entities.Users;
+import pe.edu.upc.demotf.ServicesInterfaces.IRoleService;
 
-@Entity
-@Table(name = "role")
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Controller
+@RequestMapping("/roles")
 public class RoleController {
-    private static final long serialVersionUID = 1L;
+    @Autowired
+    private IRoleService rS;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String rol;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private Users user;
-
-    public RoleController() {
+    @PostMapping
+    public void registrar(@RequestBody RoleDTO dto) {
+        ModelMapper m = new ModelMapper();
+        Role r = m.map(dto, Role.class);
+        rS.insert(r);
     }
 
-    public RoleController(Long id, String rol, Users user) {
-        this.id = id;
-        this.rol = rol;
-        this.user = user;
+    @PutMapping
+    public void modificar(@RequestBody RoleDTO dto) {
+        ModelMapper m = new ModelMapper();
+        Role r = m.map(dto, Role.class);
+        rS.insert(r);
     }
 
-    public Long getId() {
-        return id;
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Long id) {
+        rS.delete(id);
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    @GetMapping("/{id}")
+    public RoleDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m = new ModelMapper();
+        RoleDTO dto = m.map(rS.listarId(id), RoleDTO.class);
+        return dto;
     }
 
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
-
-    public Users getUser() {
-        return user;
-    }
-
-    public void setUser(Users user) {
-        this.user = user;
+    @GetMapping
+    public List<RoleDTO> listar() {
+        return rS.list().stream().map(x -> {
+            ModelMapper m = new ModelMapper();
+            return m.map(x, RoleDTO.class);
+        }).collect(Collectors.toList());
     }
 }

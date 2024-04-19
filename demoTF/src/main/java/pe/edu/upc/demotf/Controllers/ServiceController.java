@@ -2,6 +2,7 @@ package pe.edu.upc.demotf.Controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.demotf.Dtos.ServiceDTO;
 import pe.edu.upc.demotf.Entities.Services;
@@ -21,11 +22,20 @@ public class ServiceController {
         Services sh=m.map(s,Services.class);
         sS.insert(sh);
     }
-    @GetMapping
-    public List<ServiceDTO>list(){
+    @GetMapping("/listar")
+    public List<ServiceDTO>lista(){
         return  sS.list().stream().map(y->{ModelMapper m=new ModelMapper();
         return  m.map(y,ServiceDTO.class);}).collect(Collectors.toList());
     }
+    @GetMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER','SUPERVISOR')&& !hasAnyAuthority('MARISOL')")
+    public List<ServiceDTO>list(){
+        return sS.list().stream().map(y->{
+            ModelMapper m=new ModelMapper();
+            return m.map(y,ServiceDTO.class);
+        }).collect(Collectors.toList());
+    }
+
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id")Integer id){
         sS.delete(id);
