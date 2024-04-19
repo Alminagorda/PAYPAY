@@ -1,6 +1,7 @@
-package pe.edu.upc.demotf.entities;
+package pe.edu.upc.demotf.Entities;
 
 import jakarta.persistence.*;
+import pe.edu.upc.demotf.Entities.Services;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -23,7 +24,7 @@ public class Voucher {
     private int numberOperationVoucher;
     @ManyToOne
     @JoinColumn(name = "idServiceB")
-    private ServiceB serviceB;
+    private Services services;
 
     public Voucher() {
     }

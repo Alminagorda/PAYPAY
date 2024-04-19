@@ -2,7 +2,7 @@ package pe.edu.upc.demotf.ServiceImplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.demotf.Entities.User;
+import pe.edu.upc.demotf.Entities.Users;
 import pe.edu.upc.demotf.ServicesInterfaces.IUserService;
 import pe.edu.upc.demotf.repositories.IUserRepository;
 
@@ -14,12 +14,12 @@ public class UserServiceImplement implements IUserService {
     private IUserRepository uR;
 
     @Override
-    public void insert(User users) {
+    public void insert(Users users) {
         uR.save(users);
     }
 
     @Override
-    public List<User> list() {
+    public List<Users> list() {
         return uR.findAll();
     }
 
@@ -29,7 +29,7 @@ public class UserServiceImplement implements IUserService {
     }
 
     @Override
-    public List<User> findByLastnameUser(String lastname) {
+    public List<Users> findByLastnameUser(String lastname) {
         return uR.findByLastnameUser(lastname);
     }
 }

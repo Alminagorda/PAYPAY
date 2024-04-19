@@ -1,4 +1,4 @@
-package pe.edu.upc.demotf.dtos;
+package pe.edu.upc.demotf.Dtos;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 

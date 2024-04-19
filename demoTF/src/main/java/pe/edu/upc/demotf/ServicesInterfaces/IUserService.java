@@ -1,13 +1,13 @@
 package pe.edu.upc.demotf.ServicesInterfaces;
 
-import pe.edu.upc.demotf.Entities.User;
+import pe.edu.upc.demotf.Entities.Users;
 
 import java.util.List;
 
 public interface IUserService {
-    public void insert(User users);
-    public List<User> list();
+    public void insert(Users users);
+    public List<Users> list();
     public void delete(int dni);
 
-    public List<User> findByLastnameUser(String lastname);
+    public List<Users> findByLastnameUser(String lastname);
 }

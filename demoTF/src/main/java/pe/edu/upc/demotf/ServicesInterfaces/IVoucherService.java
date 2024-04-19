@@ -1,6 +1,7 @@
-package pe.edu.upc.demotf.servicesinterfaces;
+package pe.edu.upc.demotf.ServicesInterfaces;
 
-import pe.edu.upc.demotf.entities.Voucher;
+import pe.edu.upc.demotf.Entities.Voucher;
+
 
 import java.util.List;
 

@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.demotf.Dtos.UserDTO;
-import pe.edu.upc.demotf.Entities.User;
+import pe.edu.upc.demotf.Entities.Users;
 import pe.edu.upc.demotf.ServicesInterfaces.IUserService;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class UserController {
     @PostMapping
     public void registrar(@RequestBody UserDTO u){
         ModelMapper m=new ModelMapper();
-        User s=m.map(u,User.class);
+        Users s=m.map(u, Users.class);
         uS.insert(s);
     }
 

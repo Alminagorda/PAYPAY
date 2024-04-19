@@ -1,10 +1,12 @@
-package pe.edu.upc.demotf.servicesimplements;
+package pe.edu.upc.demotf.ServiceImplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.demotf.entities.Voucher;
+import pe.edu.upc.demotf.Entities.Voucher;
+import pe.edu.upc.demotf.ServicesInterfaces.IVoucherService;
+
 import pe.edu.upc.demotf.repositories.IVoucherRepository;
-import pe.edu.upc.demotf.servicesinterfaces.IVoucherService;
+
 
 import java.util.List;
 
