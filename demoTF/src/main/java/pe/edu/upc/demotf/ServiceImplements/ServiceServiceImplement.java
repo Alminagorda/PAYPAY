@@ -35,4 +35,9 @@ sR.deleteById(id);
     public Services listId(int id){
         return sR.findById(id).orElse(new Services());
     }
+
+    @Override
+    public List<Services> findbynameandDescription(String name, String descrip) {
+        return sR.findByNameServiceAndDescriptionService(name,descrip);
+    }
 }

@@ -10,6 +10,10 @@ public class VoucherDTO {
     private double amountVoucher;
     private int numberOperationVoucher;
 
+    //para listar la cantidad de vaucher(precio) por servicio se utliza este mismo DTO
+    private String nameService;
+    private double serviceMoney;
+
     public int getIdVoucher() {
         return idVoucher;
     }

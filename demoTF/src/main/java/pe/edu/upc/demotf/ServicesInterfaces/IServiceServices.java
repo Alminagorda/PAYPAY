@@ -10,7 +10,7 @@ public interface IServiceServices {
     public  void  delete(int id);
     public  void update(Services service);
     public Services listId(int id);
-
+    public List<Services>findbynameandDescription(String name, String descrip);
 }
 
 

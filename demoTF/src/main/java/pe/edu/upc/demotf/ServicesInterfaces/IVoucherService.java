@@ -10,4 +10,5 @@ public interface IVoucherService {
     public List<Voucher> list();
     public void delete(int id);
     public Voucher lisId(int id);
+    public List<String[]>findByAmountVoucherService();
 }

@@ -46,4 +46,12 @@ public class ServiceController {
         ServiceDTO dto=m.map(sS.listId(id),ServiceDTO.class);
         return  dto;
     }
+
+    @GetMapping("/buscarServicioND")
+    public List<ServiceDTO>buscar(@RequestParam String name, String descrip){
+        return sS.findbynameandDescription(name,descrip).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,ServiceDTO.class);
+        }).collect(Collectors.toList());
+    }
 }

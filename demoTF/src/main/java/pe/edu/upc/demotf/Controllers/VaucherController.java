@@ -43,4 +43,6 @@ public class VaucherController {
         VoucherDTO dto=m.map(vS.lisId(id),VoucherDTO.class);
         return dto;
     }
+   // @GetMapping("/cantidadPVaucher")
+   // public List
 }

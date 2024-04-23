@@ -33,4 +33,10 @@ public class VoucherServiceImplement implements IVoucherService {
     public Voucher lisId(int id) {
         return vR.findById(id).orElse(new Voucher());
     }
+
+    @Override
+    public List<String[]> findByAmountVoucherService() {
+        return vR.findByAmountVoucherService();
+    }
+//aqui hcicite otro product black en sumar el monto de pago de vaucher con servicio
 }
