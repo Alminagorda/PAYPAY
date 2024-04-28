@@ -1,70 +1,78 @@
-package pe.edu.upc.demotf.Dtos;
+package pe.edu.upc.demotf.dtos;
 
-
+import pe.edu.upc.demotf.entities.Users;
 
 public class BankingEntityDTO {
+    private int idBankingEntity;
+    private String nameBankingEntity;
+    private String descriptionBankingEntity;
+    private String addressBankingEntity;
+    private String cellphoneBankingEntity;
+    private String websiteBankingEntity;
+    private String headquarterBankingEntity;
+    private Users user;
 
-    private  int id;
-    private  String name;
-    private  String description;
-    private String address;
-    private String cell_phone_number;
-    private  String website;
-    private  String email;
-
-    public int getId() {
-        return id;
+    public int getIdBankingEntity() {
+        return idBankingEntity;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdBankingEntity(int idBankingEntity) {
+        this.idBankingEntity = idBankingEntity;
     }
 
-    public String getName() {
-        return name;
+    public String getNameBankingEntity() {
+        return nameBankingEntity;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameBankingEntity(String nameBankingEntity) {
+        this.nameBankingEntity = nameBankingEntity;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescriptionBankingEntity() {
+        return descriptionBankingEntity;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescriptionBankingEntity(String descriptionBankingEntity) {
+        this.descriptionBankingEntity = descriptionBankingEntity;
     }
 
-    public String getAddress() {
-        return address;
+    public String getAddressBankingEntity() {
+        return addressBankingEntity;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddressBankingEntity(String addressBankingEntity) {
+        this.addressBankingEntity = addressBankingEntity;
     }
 
-    public String getCell_phone_number() {
-        return cell_phone_number;
+    public String getCellphoneBankingEntity() {
+        return cellphoneBankingEntity;
     }
 
-    public void setCell_phone_number(String cell_phone_number) {
-        this.cell_phone_number = cell_phone_number;
+    public void setCellphoneBankingEntity(String cellphoneBankingEntity) {
+        this.cellphoneBankingEntity = cellphoneBankingEntity;
     }
 
-    public String getWebsite() {
-        return website;
+    public String getWebsiteBankingEntity() {
+        return websiteBankingEntity;
     }
 
-    public void setWebsite(String website) {
-        this.website = website;
+    public void setWebsiteBankingEntity(String websiteBankingEntity) {
+        this.websiteBankingEntity = websiteBankingEntity;
     }
 
-    public String getEmail() {
-        return email;
+    public String getHeadquarterBankingEntity() {
+        return headquarterBankingEntity;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setHeadquarterBankingEntity(String headquarterBankingEntity) {
+        this.headquarterBankingEntity = headquarterBankingEntity;
+    }
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
     }
 }
